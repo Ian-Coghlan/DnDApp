@@ -28,25 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.WelcomeText = new System.Windows.Forms.Label();
+            this.InfoText = new System.Windows.Forms.Label();
+            this.Register = new System.Windows.Forms.Button();
+            this.Login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // WelcomeText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(437, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to Ian\'s DnD Application.";
+            this.WelcomeText.AutoSize = true;
+            this.WelcomeText.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WelcomeText.Location = new System.Drawing.Point(44, 32);
+            this.WelcomeText.Name = "WelcomeText";
+            this.WelcomeText.Size = new System.Drawing.Size(437, 32);
+            this.WelcomeText.TabIndex = 0;
+            this.WelcomeText.Text = "Welcome to Ian\'s DnD Application.";
+            // 
+            // InfoText
+            // 
+            this.InfoText.AutoSize = true;
+            this.InfoText.Location = new System.Drawing.Point(47, 111);
+            this.InfoText.Name = "InfoText";
+            this.InfoText.Size = new System.Drawing.Size(466, 13);
+            this.InfoText.TabIndex = 1;
+            this.InfoText.Text = "This Application is to allow users to maintain information on Characters in Dunge" +
+    "ons and Dragons.";
+            // 
+            // Register
+            // 
+            this.Register.Location = new System.Drawing.Point(50, 268);
+            this.Register.Name = "Register";
+            this.Register.Size = new System.Drawing.Size(75, 23);
+            this.Register.TabIndex = 2;
+            this.Register.Text = "Register";
+            this.Register.UseVisualStyleBackColor = true;
+            this.Register.Click += new System.EventHandler(this.Register_Click);
+            // 
+            // Login
+            // 
+            this.Login.Location = new System.Drawing.Point(406, 268);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(75, 23);
+            this.Login.TabIndex = 3;
+            this.Login.Text = "Login";
+            this.Login.UseVisualStyleBackColor = true;
             // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 411);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Login);
+            this.Controls.Add(this.Register);
+            this.Controls.Add(this.InfoText);
+            this.Controls.Add(this.WelcomeText);
             this.Name = "Start";
             this.Text = "Welcome to Ian\'s DND Application for Character Tracking";
             this.Load += new System.EventHandler(this.Start_Load);
@@ -57,7 +92,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label WelcomeText;
+        private System.Windows.Forms.Label InfoText;
+        private System.Windows.Forms.Button Register;
+        private System.Windows.Forms.Button Login;
     }
 }
 
