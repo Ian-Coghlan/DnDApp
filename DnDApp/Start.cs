@@ -21,8 +21,8 @@ namespace DnDApp
 
         private void Start_Load(object sender, EventArgs e)
         {
-            
-            ReadSetting("Password");
+
+            ReadSetting();
             if (!passwordFilled)
             {
                 Login.Enabled = false;
@@ -35,18 +35,18 @@ namespace DnDApp
 
         }
 
-        private void ReadSetting(string key)
+        private void ReadSetting()
         {
-            var appSettings = ConfigurationSettings.AppSettings;
+            var appSettings = Properties.Settings.Default.password;
 
-            if(appSettings[key] == null)
+            if(appSettings == "")
             {
-               bool passwordFilled = false;
+                passwordFilled = false;
 
             }
             else
             {
-                bool passwordFilled = true;
+                passwordFilled = true;
             }
         }
 
@@ -58,7 +58,7 @@ namespace DnDApp
             reg.Show();
         }
 
-        const bool passwordFilled = false;
+       public bool passwordFilled = false;
 
     }
 }

@@ -28,17 +28,29 @@ namespace DnDApp.register
         {
 
             string username = username_Field.Text;
+            string password = password_Field.Text;
+            string passwordConfirm = password_Confim_Field.Text;
 
-            UpdateSetting("username", username);
+            if(password == passwordConfirm)
+            {
+                UpdateSetting("username", username);
+
+            }
+            else
+            {
+
+            }
+
+
 
         }
 
-        private static void UpdateSetting(string key, string value)
+        private static void UpdateSetting(string key, string username)
         {
-            //Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //configuration.AppSettings.Settings[key].Value = value;
-            //configuration.Save();
-            //ConfigurationManager.RefreshSection("appSettings");
+            
+            Properties.Settings.Default["username"] = username;
+            Properties.Settings.Default.Save();
+
         }
     }
 }
